@@ -1,10 +1,273 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Arthur — Currículo</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">A<span class="dot">.</span></div>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero" id="sobre">
+      <div class="hero-content">
+        <div class="photo-wrapper">
+          <div class="photo-ring"></div>
+          <img src="imgs/arthur.png" alt="Arthur" class="profile-photo" />
+          <div class="status-dot"></div>
+        </div>
+        <div class="hero-text">
+          <p class="greeting">Olá, eu sou</p>
+          <h1 class="name">Arthur<span class="accent">.</span></h1>
+          <p class="role">
+            <span class="cursor-text" id="typed-role"></span
+            ><span class="cursor">|</span>
+          </p>
+          <p class="bio">
+            Desenvolvedor apaixonado por criar experiências digitais
+            impactantes. Focado em código limpo, design funcional e soluções que
+            fazem a diferença.
+          </p>
+          <div class="hero-cta">
+            <a href="#contato" class="btn-primary">Entrar em contato</a>
+            <a href="#experiencia" class="btn-ghost">Ver trabalhos</a>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <section class="section" id="habilidades">
+      <div class="container">
+        <h2 class="section-title">Habilidades<span class="accent">.</span></h2>
+        <div class="skills-grid">
+          <div class="skill-card" style="--delay: 0s">
+            <div class="skill-icon">&#x3c;/&#x3e;</div>
+            <h3>Front-end</h3>
+            <div class="skill-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span
+              ><span>React</span>
+            </div>
+          </div>
+          <div class="skill-card" style="--delay: 0.1s">
+            <div class="skill-icon">&#x7b; &#x7d;</div>
+            <h3>Back-end</h3>
+            <div class="skill-tags">
+              <span>Node.js</span><span>Python</span><span>SQL</span
+              ><span>REST APIs</span>
+            </div>
+          </div>
+          <div class="skill-card" style="--delay: 0.2s">
+            <div class="skill-icon">&#x2318;</div>
+            <h3>Ferramentas</h3>
+            <div class="skill-tags">
+              <span>Git</span><span>GitHub</span><span>VS Code</span
+              ><span>Linux</span>
+            </div>
+          </div>
+          <div class="skill-card" style="--delay: 0.3s">
+            <div class="skill-icon">&#x2726;</div>
+            <h3>Outros</h3>
+            <div class="skill-tags">
+              <span>UI/UX</span><span>Figma</span><span>Scrum</span
+              ><span>Docker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experiencia">
+      <div class="container">
+        <h2 class="section-title">Experiência<span class="accent">.</span></h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Desenvolvedor Full Stack</h3>
+                <span class="badge">2023 — atual</span>
+              </div>
+              <p class="company">TechNova Solutions</p>
+              <p class="desc">
+                Desenvolvimento de aplicações web escaláveis, integração de
+                APIs, manutenção de sistemas em produção e colaboração em
+                equipes ágeis.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Desenvolvedor Front-end</h3>
+                <span class="badge">2021 — 2023</span>
+              </div>
+              <p class="company">PixelCraft Agency</p>
+              <p class="desc">
+                Criação de interfaces responsivas, otimização de performance e
+                implementação de animações CSS/JS para clientes de grande porte.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Estagiário de TI</h3>
+                <span class="badge">2020 — 2021</span>
+              </div>
+              <p class="company">DataBridge Corp</p>
+              <p class="desc">
+                Suporte técnico, manutenção de sistemas internos e
+                desenvolvimento de scripts de automação para processos
+                administrativos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="formacao">
+      <div class="container">
+        <h2 class="section-title">Formação<span class="accent">.</span></h2>
+        <div class="edu-grid">
+          <div class="edu-card">
+            <div class="edu-icon">&#x1F393;</div>
+            <div>
+              <h3>Ciência da Computação</h3>
+              <p class="edu-place">Universidade Federal — 2019 a 2023</p>
+              <p class="edu-desc">
+                Graduação com ênfase em engenharia de software, estruturas de
+                dados e sistemas distribuídos.
+              </p>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon">&#x1F4DC;</div>
+            <div>
+              <h3>Certificação AWS Cloud</h3>
+              <p class="edu-place">Amazon Web Services — 2022</p>
+              <p class="edu-desc">
+                AWS Certified Developer – Associate. Infraestrutura em nuvem,
+                Lambda, S3, DynamoDB.
+              </p>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon">&#x1F4BB;</div>
+            <div>
+              <h3>Full Stack Web Dev</h3>
+              <p class="edu-place">Bootcamp Rocketseat — 2021</p>
+              <p class="edu-desc">
+                Programa intensivo cobrindo React, Node.js, TypeScript e boas
+                práticas de desenvolvimento moderno.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container">
+        <h2 class="section-title">Contato<span class="accent">.</span></h2>
+        <p class="contact-sub">
+          Aberto a novas oportunidades. Vamos conversar?
+        </p>
+        <div class="contact-links">
+          <a href="mailto:arthur@email.com" class="contact-card">
+            <span class="contact-icon">✉</span>
+            <span>arthur@email.com</span>
+          </a>
+          <a
+            href="https://linkedin.com/in/arthur"
+            class="contact-card"
+            target="_blank"
+          >
+            <span class="contact-icon">in</span>
+            <span>linkedin.com/in/arthur</span>
+          </a>
+          <a
+            href="https://github.com/arthur"
+            class="contact-card"
+            target="_blank"
+          >
+            <span class="contact-icon">gh</span>
+            <span>github.com/arthur</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Feito com <span class="accent">&#x2665;</span> por Arthur &mdash;
+        <span id="year"></span>
+      </p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const roles = [
+        "Desenvolvedor Web",
+        "Criador de interfaces",
+        "Entusiasta de código",
+        "Solucionador de problemas",
+      ];
+      let ri = 0,
+        ci = 0,
+        deleting = false;
+      const el = document.getElementById("typed-role");
+      function type() {
+        const word = roles[ri];
+        if (!deleting) {
+          el.textContent = word.slice(0, ci + 1);
+          ci++;
+          if (ci === word.length) {
+            deleting = true;
+            setTimeout(type, 1800);
+            return;
+          }
+        } else {
+          el.textContent = word.slice(0, ci - 1);
+          ci--;
+          if (ci === 0) {
+            deleting = false;
+            ri = (ri + 1) % roles.length;
+          }
+        }
+        setTimeout(type, deleting ? 60 : 100);
+      }
+      type();
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.15 },
+      );
+      document
+        .querySelectorAll(
+          ".skill-card, .timeline-item, .edu-card, .contact-card",
+        )
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
 </html>
