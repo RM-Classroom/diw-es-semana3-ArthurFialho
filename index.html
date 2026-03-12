@@ -224,31 +224,24 @@
     <script>
       const elementoAno = document.getElementById("year");
       elementoAno.textContent = new Date().getFullYear();
-
       const listaDeFuncoes = [
         "Desenvolvedor Web",
         "Criador de interfaces",
         "Entusiasta de código",
         "Solucionador de problemas",
       ];
-
       let indiceFuncaoAtual = 0;
       let indiceLetraAtual = 0;
       let estaApagando = false;
-
       const elementoTextoDigitado = document.getElementById("typed-role");
-
       function animarDigitacao() {
         const funcaoAtual = listaDeFuncoes[indiceFuncaoAtual];
-
         if (!estaApagando) {
           elementoTextoDigitado.textContent = funcaoAtual.slice(
             0,
             indiceLetraAtual + 1,
           );
-
           indiceLetraAtual++;
-
           if (indiceLetraAtual === funcaoAtual.length) {
             estaApagando = true;
             setTimeout(animarDigitacao, 1800);
@@ -259,20 +252,15 @@
             0,
             indiceLetraAtual - 1,
           );
-
           indiceLetraAtual--;
-
           if (indiceLetraAtual === 0) {
             estaApagando = false;
             indiceFuncaoAtual = (indiceFuncaoAtual + 1) % listaDeFuncoes.length;
           }
         }
-
         setTimeout(animarDigitacao, estaApagando ? 60 : 100);
       }
-
       animarDigitacao();
-
       const observadorDeElementos = new IntersectionObserver(
         (entradas) => {
           entradas.forEach((entrada) => {
@@ -283,11 +271,9 @@
         },
         { threshold: 0.15 },
       );
-
       const elementosAnimados = document.querySelectorAll(
         ".skill-card, .timeline-item, .edu-card, .contact-card",
       );
-
       elementosAnimados.forEach((elemento) => {
         observadorDeElementos.observe(elemento);
       });
