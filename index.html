@@ -222,53 +222,75 @@
     </footer>
 
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+      const elementoAno = document.getElementById("year");
+      elementoAno.textContent = new Date().getFullYear();
 
-      const roles = [
+      const listaDeFuncoes = [
         "Desenvolvedor Web",
         "Criador de interfaces",
         "Entusiasta de código",
         "Solucionador de problemas",
       ];
-      let ri = 0,
-        ci = 0,
-        deleting = false;
-      const el = document.getElementById("typed-role");
-      function type() {
-        const word = roles[ri];
-        if (!deleting) {
-          el.textContent = word.slice(0, ci + 1);
-          ci++;
-          if (ci === word.length) {
-            deleting = true;
-            setTimeout(type, 1800);
+
+      let indiceFuncaoAtual = 0;
+      let indiceLetraAtual = 0;
+      let estaApagando = false;
+
+      const elementoTextoDigitado = document.getElementById("typed-role");
+
+      function animarDigitacao() {
+        const funcaoAtual = listaDeFuncoes[indiceFuncaoAtual];
+
+        if (!estaApagando) {
+          elementoTextoDigitado.textContent = funcaoAtual.slice(
+            0,
+            indiceLetraAtual + 1,
+          );
+
+          indiceLetraAtual++;
+
+          if (indiceLetraAtual === funcaoAtual.length) {
+            estaApagando = true;
+            setTimeout(animarDigitacao, 1800);
             return;
           }
         } else {
-          el.textContent = word.slice(0, ci - 1);
-          ci--;
-          if (ci === 0) {
-            deleting = false;
-            ri = (ri + 1) % roles.length;
+          elementoTextoDigitado.textContent = funcaoAtual.slice(
+            0,
+            indiceLetraAtual - 1,
+          );
+
+          indiceLetraAtual--;
+
+          if (indiceLetraAtual === 0) {
+            estaApagando = false;
+            indiceFuncaoAtual = (indiceFuncaoAtual + 1) % listaDeFuncoes.length;
           }
         }
-        setTimeout(type, deleting ? 60 : 100);
-      }
-      type();
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) e.target.classList.add("visible");
+        setTimeout(animarDigitacao, estaApagando ? 60 : 100);
+      }
+
+      animarDigitacao();
+
+      const observadorDeElementos = new IntersectionObserver(
+        (entradas) => {
+          entradas.forEach((entrada) => {
+            if (entrada.isIntersecting) {
+              entrada.target.classList.add("visible");
+            }
           });
         },
         { threshold: 0.15 },
       );
-      document
-        .querySelectorAll(
-          ".skill-card, .timeline-item, .edu-card, .contact-card",
-        )
-        .forEach((el) => observer.observe(el));
+
+      const elementosAnimados = document.querySelectorAll(
+        ".skill-card, .timeline-item, .edu-card, .contact-card",
+      );
+
+      elementosAnimados.forEach((elemento) => {
+        observadorDeElementos.observe(elemento);
+      });
     </script>
   </body>
 </html>
